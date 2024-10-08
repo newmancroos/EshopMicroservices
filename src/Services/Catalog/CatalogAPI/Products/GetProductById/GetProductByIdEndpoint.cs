@@ -11,7 +11,8 @@ namespace CatalogAPI.Products.GetProductById
         {
             app.MapGet("/product/{id}", async (Guid id, ISender sender) =>
             {
-                var result = await sender.Send(new GetProductByIdQuery(id));
+                //var result = await sender.Send(new GetProductByIdQuery(id));
+                var result = sender.Send(new GetProductByIdQuery(id));
 
                 var response = result.Adapt<GetProductByIdResponse>();
 

@@ -20,3 +20,11 @@
 
 
 
+	-Containerize API
+	- Select Add Docker support and select overwrite the existing one
+	-  We add Container orgestration for Postgres sql now after we create Dokcer support for Api we need to add Container Orgeatration for Api
+	- This will modify existing Docker-Compose and docker-composeoverrite file
+	- Change the exposed port numbers to 6000(http) 6060(https) here 8000 and 8081 are docker exposed port for api
+	- We need to add configurations into docker-compose overrite
+	- for connection string etc.. in the environment
+	- Catalog api depend on Catalog db so in Api section we need to add depende attribute so that docker will start Postgres before Api
