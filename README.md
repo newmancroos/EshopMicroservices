@@ -45,3 +45,27 @@ This pattern is vital for enhancing functionality while adhering to the open-clo
 
 ![image](https://github.com/user-attachments/assets/f834e4d2-e934-478e-bde9-9f1102bbbc10)
 
+
+
+### Scrutor Library
+
+.Net library that extends the build-in IOC container of ASP.NET Core. It provides additional capabilities to scan and register services in a more flexible way.
+
+#### Usages:
+  Implementing patterns like Decorator in a clean and manageable way. It simplifies the process of service registration and decoration in ASP.NET Core application.
+
+### Implement Decorator Pattern sing Scrutor Library
+1. Define Interface & Base Implementation
+   * Start with an interface eg. IBasketRepository, and a base implementation eg. BasketRepository
+
+2. Create Decorator
+   * Create a decorator class like CachedBasketRepository that also implements IBasketRepository but adds caching logic.
+
+3. Register Service with Scrutor:
+    * Use Scrutor in Program.cs to first register the base service (BasketRepository) and then apply the decorator(CachedBasketRepository).
+
+ex.
+    builder.Services.AddScoped<IBasketRepository,BasketRepository>();
+    builder.Service.Decorate<IBasketRepository, CachedBasketRepository>();
+
+    
