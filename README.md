@@ -1,6 +1,6 @@
 # EshopMicroservices
 
-Cache-Aside Pattern for Microservices :
+### Cache-Aside Pattern for Microservices :
 
 The “Cache-Aside Pattern” is a way to manage data caching to improve system performance. When an application needs data, it first checks the cache. If the data is there a cache hit, it is used right away. If not a cache miss, the application fetches the data from the main database, stores a copy in the cache, and then uses it. This pattern helps reduce database load and speeds up data retrieval. It’s commonly used to enhance the efficiency and scalability of applications by making frequently accessed data quickly available.
 
@@ -27,3 +27,21 @@ Cache-Aside, also known as Lazy Loading, is a popular caching pattern in system 
 How-Cache-Aside-Works
 
 ![image](https://github.com/user-attachments/assets/f67f39b0-b766-4cc3-9d40-c39c8e9bd182)
+
+
+### The Proxy design pattern
+
+The Proxy design pattern is a structural design pattern that provides a surrogate or placeholder for another object to control access to it. This pattern is useful when you want to add an extra layer of control over access to an object. The proxy acts as an intermediatory, controlling access to the real object.
+
+
+![image](https://github.com/user-attachments/assets/c1227e5b-0be3-48db-beda-0e526815a5a5)
+
+
+### The Decorator Pattern
+
+The Decorator Design Pattern is a structural design pattern used in software development. It allows behavior to be added to individual objects, dynamically, without affecting the behavior of other objects from the same class. This pattern is useful when you need to add functionality to objects in a flexible and reusable way.
+
+This pattern is vital for enhancing functionality while adhering to the open-closed principle. To gain insights into design patterns and their application in system architecture, consider enrolling in the System Design Course, which covers various patterns and their implications for system design.
+
+![image](https://github.com/user-attachments/assets/f834e4d2-e934-478e-bde9-9f1102bbbc10)
+
