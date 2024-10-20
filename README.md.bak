@@ -81,6 +81,3 @@ ex.
 	- Once you define a contract with Protobuf, this contract used by each service to automatically generate the code that sets up the communication infrastructure.
 	- gRPC is a form of Client-Server communication that uses function call rather than usual HTTP call.
 	- In gRPC, client application can directly call a method on a server application on a different machine like a local object
-	- On the server side, the server implements this interface and runs a gRPC server to handle client calls
-	- On client side, the client has a stub that provide the same methodss as server
-	- gRPC clients and servers can work and talk to each other in a different of environments.
