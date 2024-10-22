@@ -84,3 +84,20 @@ ex.
 	- On the server side, the server implements this interface and runs a gRPC server to handle client calls
 	- On client side, the client has a stub that provide the same methodss as server
 	- gRPC clients and servers can work and talk to each other in a different of environments.
+
+
+ ## How to create Grpc application:
+1. Create proto file and define service and messages
+![image](https://github.com/user-attachments/assets/d6018e9f-d0a6-4c95-a09a-a4652df928a4)
+
+2.  Compile the grpc service will generates grpc C3 classes in obj/net8.0/protos directory
+   ![image](https://github.com/user-attachments/assets/31a7be5f-6904-42d0-9920-c32a8ff92210)
+
+4. Create actual service class and inherite proto class base in service class
+![image](https://github.com/user-attachments/assets/23e0140c-a783-40f7-85fc-f2355788d0c3)
+
+5. Map service in the prpgram.cs
+![image](https://github.com/user-attachments/assets/ef0584ab-86c2-4a7b-9db9-94f168badd0b)
+
+    
+ 
