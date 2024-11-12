@@ -109,9 +109,6 @@ ex.
 ![image](https://github.com/user-attachments/assets/03b007c4-bbc2-4fb3-8fa0-18fb313fa327)
 
 
-![image](https://github.com/user-attachments/assets/3e236f6c-b431-48e3-8521-65dd5925abbd)
-
-
 ![image](https://github.com/user-attachments/assets/11da48cd-c40f-40bb-9296-4b8503b994f1)
 
 ![image](https://github.com/user-attachments/assets/ee0a7cc3-7b20-40b2-bded-f501684c240b)
