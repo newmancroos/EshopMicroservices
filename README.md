@@ -46,7 +46,6 @@ This pattern is vital for enhancing functionality while adhering to the open-clo
 ![image](https://github.com/user-attachments/assets/f834e4d2-e934-478e-bde9-9f1102bbbc10)
 
 
-
 ### Scrutor Library
 
 .Net library that extends the build-in IOC container of ASP.NET Core. It provides additional capabilities to scan and register services in a more flexible way.
@@ -131,3 +130,38 @@ ex.
  - Example using Guid for OrderId, CustomerId and ProductId we may pass CustomerId for ProductId
  - Solution : Using Strongly type Id that means create OrderId object and pass it for OrderId.
 
+<hr/>
+### Anemic-Domain Model Entity:
+- Entity have little or no business logic (domain logic)
+- Essentially data structure with getters and setters
+- But the business rules and behaviors are typically implemented outside the entity, often in service layer.
+- Ex.
+  <pre>
+	  public class Order
+	  {
+	  	Public List<OrderItem> OrderItem {get;set;}
+	  }
+  </pre>
+  Here We can fill OrderItem directly to this instance of the class
+
+### Rich-Domain Model Entity:
+- Entity encapsulate both data and behavior.
+- This model enriches entities with methods that embosy business rules and domain logic
+- Ex.
+  <pre>
+	public class Order
+	  {
+	  	private readonly List<OrderItem> _orderitems = new();
+		public IReadonlyList<OrderItem> OrderItems => _orderiItems.AsReadOnly();
+
+		public void AddOrderItem(OrderItem item)
+		{
+			//logic
+		}
+		public void RemoveOrderItem(OrderItem item)
+		{
+			//logic
+		}	
+	  }
+  </pre>
+  -Order is a rich domain model as it includes methods AddOrderItem and RemoveOrderItem which encapsulates the business logic for manipulating the order items.
