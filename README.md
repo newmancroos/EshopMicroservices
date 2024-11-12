@@ -131,6 +131,7 @@ ex.
  - Solution : Using Strongly type Id that means create OrderId object and pass it for OrderId.
 
 <hr/>
+
 ### Anemic-Domain Model Entity:
 - Entity have little or no business logic (domain logic)
 - Essentially data structure with getters and setters
