@@ -100,4 +100,16 @@ ex.
 ![image](https://github.com/user-attachments/assets/ef0584ab-86c2-4a7b-9db9-94f168badd0b)
 
     
+ ###Clean Architecture
+
+ ![image](https://github.com/user-attachments/assets/ca55877a-2d60-48e3-959d-a8f950fdc673)
+
+
+![image](https://github.com/user-attachments/assets/ed99650e-ff02-49cb-821b-f20c877b053a)
+
+![image](https://github.com/user-attachments/assets/3e236f6c-b431-48e3-8521-65dd5925abbd)
+
+
+
  
+
