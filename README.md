@@ -126,5 +126,8 @@ ex.
 
 
 
- 
+ ### Primitive Obsession:
+ - Primitive Obsession is a code smell where primitives (string, int, Guid) are used for domain concepts, leading to ambiguity and error
+ - Example using Guid for OrderId, CustomerId and ProductId we may pass CustomerId for ProductId
+ - Solution : Using Strongly type Id that means create OrderId object and pass it for OrderId.
 
