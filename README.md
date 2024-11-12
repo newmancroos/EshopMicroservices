@@ -100,7 +100,7 @@ ex.
 ![image](https://github.com/user-attachments/assets/ef0584ab-86c2-4a7b-9db9-94f168badd0b)
 
     
- ###Clean Architecture:
+ ### Clean Architecture:
 
  It is also call Domain centric architechture.
 
