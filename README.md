@@ -119,6 +119,11 @@ ex.
 
 
 
+### Aggregate/Value Objects:
+
+![image](https://github.com/user-attachments/assets/1ad65151-9221-40d7-b586-8c294bc4efa2)
+
+
 
 
  
