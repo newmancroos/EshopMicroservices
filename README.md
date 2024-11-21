@@ -216,3 +216,7 @@ If a product price is updated in the Catalog Microservice, we should check the e
 - Ex. After handling OrderPlacedEvent, an OrderPlacedIntegrationEvent might be published to a message broker like RabbitMq then consumes by other microservices.
 
 
+![image](https://github.com/user-attachments/assets/04e04f4b-08c3-4131-a2ec-1c96a2bee837)
+
+
+
