@@ -166,3 +166,57 @@ ex.
 	  }
   </pre>
   -Order is a rich domain model as it includes methods AddOrderItem and RemoveOrderItem which encapsulates the business logic for manipulating the order items.
+<hr/>
+
+### Domain Event in DDD
+
+- Domain Events represent somthing that happened in the past and the other part of the same service bountry same domain need to react to those changes
+- Domain Event is a business event that occures within the domain model. It often represents a side effect of a domain operaation
+- Achive consistency between aggregates in the same domain.
+- When an order is placed, an OrderPlace event might be triggered.
+- Triggere side effects or notify other parts of the system about changes within the domain
+
+<b>How to use Domain events in DDD?</b>
+
+- Encapsulate the event details and dispatch them to the interested parties
+- Communicate changes within the domain to external handlers which may perform actions based on these events.
+
+  ![image](https://github.com/user-attachments/assets/0f041549-0826-46ac-9382-86b5d35c36a0)
+
+![image](https://github.com/user-attachments/assets/828e7c4f-1d85-4118-a616-7e7a96951620)
+
+
+### Integrated Events
+
+-Integrated events are used for bringing domain stae in sync across multiple microservices, or external system.
+The purpose of the integration events is to propagate committed transactions and updates to additional sub-systems, with different services (it can be microservices, bounded context, or external applications).
+
+Let’s assume again, we have an e-commerce application and have some services, such as Order MS, Catalog MS, Basket MS, and so on…
+
+What we should do when a product price is updated? How we can reflect this change to a basket with the product which its price updated?
+
+![image](https://github.com/user-attachments/assets/4f4940dc-b983-4d2d-ac99-e1cf03988181)
+
+
+If a product price is updated in the Catalog Microservice, we should check the existing basket items in the Basket Microservice and update the same product price - reflect the same change in the basket service - and this can be achieved by publishing an integration event in the Catalog Microservice and handling the event in the Basket Microservice asynchronously.
+
+
+### Domain Vs Integrated Events
+
+* <u>Domain Events</u>
+- Publish and consume within a single domain. Strictly within the bountry of the microservice/domain context
+- Indicate something happened within the aggregate.
+- In-process ans synchronusly, sent using an In-Memory message bus
+- Ex. OrderPlacedEvent
+
+* <u>Integrated Events</u>
+- Used to communicate state changes or events between context or microservices
+- Overall system's reaction to certain domain events
+- Asynchronusly sent with a message broker over a queue
+- Ex. After handling OrderPlacedEvent, an OrderPlacedIntegrationEvent might be published to a message broker like RabbitMq then consumes by other microservices.
+
+
+![image](https://github.com/user-attachments/assets/04e04f4b-08c3-4131-a2ec-1c96a2bee837)
+
+
+
