@@ -46,7 +46,6 @@ This pattern is vital for enhancing functionality while adhering to the open-clo
 ![image](https://github.com/user-attachments/assets/f834e4d2-e934-478e-bde9-9f1102bbbc10)
 
 
-
 ### Scrutor Library
 
 .Net library that extends the build-in IOC container of ASP.NET Core. It provides additional capabilities to scan and register services in a more flexible way.
@@ -84,3 +83,86 @@ ex.
 	- On the server side, the server implements this interface and runs a gRPC server to handle client calls
 	- On client side, the client has a stub that provide the same methodss as server
 	- gRPC clients and servers can work and talk to each other in a different of environments.
+
+
+ ## How to create Grpc application:
+1. Create proto file and define service and messages
+![image](https://github.com/user-attachments/assets/d6018e9f-d0a6-4c95-a09a-a4652df928a4)
+
+2.  Compile the grpc service will generates grpc C3 classes in obj/net8.0/protos directory
+   ![image](https://github.com/user-attachments/assets/31a7be5f-6904-42d0-9920-c32a8ff92210)
+
+4. Create actual service class and inherite proto class base in service class
+![image](https://github.com/user-attachments/assets/23e0140c-a783-40f7-85fc-f2355788d0c3)
+
+5. Map service in the prpgram.cs
+![image](https://github.com/user-attachments/assets/ef0584ab-86c2-4a7b-9db9-94f168badd0b)
+
+    
+ ### Clean Architecture:
+
+ It is also call Domain centric architechture.
+
+ ![image](https://github.com/user-attachments/assets/ca55877a-2d60-48e3-959d-a8f950fdc673)
+
+![image](https://github.com/user-attachments/assets/03b007c4-bbc2-4fb3-8fa0-18fb313fa327)
+
+
+![image](https://github.com/user-attachments/assets/11da48cd-c40f-40bb-9296-4b8503b994f1)
+
+![image](https://github.com/user-attachments/assets/ee0a7cc3-7b20-40b2-bded-f501684c240b)
+
+![image](https://github.com/user-attachments/assets/bde654ff-2a53-4afb-9976-f17480cef08a)
+
+![image](https://github.com/user-attachments/assets/20b59bbd-ff83-4a4c-b86e-53a5c52d3e80)
+
+
+
+### Aggregate/Value Objects:
+
+![image](https://github.com/user-attachments/assets/1ad65151-9221-40d7-b586-8c294bc4efa2)
+
+
+
+
+ ### Primitive Obsession:
+ - Primitive Obsession is a code smell where primitives (string, int, Guid) are used for domain concepts, leading to ambiguity and error
+ - Example using Guid for OrderId, CustomerId and ProductId we may pass CustomerId for ProductId
+ - Solution : Using Strongly type Id that means create OrderId object and pass it for OrderId.
+
+<hr/>
+
+### Anemic-Domain Model Entity:
+- Entity have little or no business logic (domain logic)
+- Essentially data structure with getters and setters
+- But the business rules and behaviors are typically implemented outside the entity, often in service layer.
+- Ex.
+  <pre>
+	  public class Order
+	  {
+	  	Public List<OrderItem> OrderItem {get;set;}
+	  }
+  </pre>
+  Here We can fill OrderItem directly to this instance of the class
+
+### Rich-Domain Model Entity:
+- Entity encapsulate both data and behavior.
+- This model enriches entities with methods that embosy business rules and domain logic
+- Ex.
+  <pre>
+	public class Order
+	  {
+	  	private readonly List<OrderItem> _orderitems = new();
+		public IReadonlyList<OrderItem> OrderItems => _orderiItems.AsReadOnly();
+
+		public void AddOrderItem(OrderItem item)
+		{
+			//logic
+		}
+		public void RemoveOrderItem(OrderItem item)
+		{
+			//logic
+		}	
+	  }
+  </pre>
+  -Order is a rich domain model as it includes methods AddOrderItem and RemoveOrderItem which encapsulates the business logic for manipulating the order items.
