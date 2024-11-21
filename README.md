@@ -166,3 +166,16 @@ ex.
 	  }
   </pre>
   -Order is a rich domain model as it includes methods AddOrderItem and RemoveOrderItem which encapsulates the business logic for manipulating the order items.
+<hr/>
+### Domain Event in DDD
+
+- Domain Events represent somthing that happened in the past and the other part of the same service bountry same domain need to react to those changes
+- Domain Event is a business event that occures within the domain model. It often represents a side effect of a domain operaation
+- Achive consistency between aggregates in the same domain.
+- When an order is placed, an OrderPlace event might be triggered.
+- Triggere side effects or notify other parts of the system about changes within the domain
+
+<b>How to use Domain events in DDD?</b>
+
+
+
