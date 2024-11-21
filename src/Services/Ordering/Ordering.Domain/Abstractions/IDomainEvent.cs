@@ -2,7 +2,7 @@
 
 namespace Ordering.Domain.Abstractions;
 
-public class IDomainEvent:INotification
+public interface IDomainEvent:INotification
 {
     Guid EventId => Guid.NewGuid();
     public DateTime OccurredOn => DateTime.UtcNow;
