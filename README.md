@@ -186,3 +186,20 @@ ex.
 ![image](https://github.com/user-attachments/assets/828e7c4f-1d85-4118-a616-7e7a96951620)
 
 
+### Integrated Events
+
+-Integrated events are used for bringing domain stae in sync across multiple microservices, or external system.
+The purpose of the integration events is to propagate committed transactions and updates to additional sub-systems, with different services (it can be microservices, bounded context, or external applications).
+
+Let’s assume again, we have an e-commerce application and have some services, such as Order MS, Catalog MS, Basket MS, and so on…
+
+What we should do when a product price is updated? How we can reflect this change to a basket with the product which its price updated?
+
+![image](https://github.com/user-attachments/assets/4f4940dc-b983-4d2d-ac99-e1cf03988181)
+
+
+If a product price is updated in the Catalog Microservice, we should check the existing basket items in the Basket Microservice and update the same product price - reflect the same change in the basket service - and this can be achieved by publishing an integration event in the Catalog Microservice and handling the event in the Basket Microservice asynchronously.
+
+
+
+
