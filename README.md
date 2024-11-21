@@ -201,5 +201,18 @@ What we should do when a product price is updated? How we can reflect this chang
 If a product price is updated in the Catalog Microservice, we should check the existing basket items in the Basket Microservice and update the same product price - reflect the same change in the basket service - and this can be achieved by publishing an integration event in the Catalog Microservice and handling the event in the Basket Microservice asynchronously.
 
 
+### Domain Vs Integrated Events
+
+* <u>Domain Events</u>
+- Publish and consume within a single domain. Strictly within the bountry of the microservice/domain context
+- Indicate something happened within the aggregate.
+- In-process ans synchronusly, sent using an In-Memory message bus
+- Ex. OrderPlacedEvent
+
+* <u>Integrated Events</u>
+- Used to communicate state changes or events between context or microservices
+- Overall system's reaction to certain domain events
+- Asynchronusly sent with a message broker over a queue
+- Ex. After handling OrderPlacedEvent, an OrderPlacedIntegrationEvent might be published to a message broker like RabbitMq then consumes by other microservices.
 
 
