@@ -167,6 +167,7 @@ ex.
   </pre>
   -Order is a rich domain model as it includes methods AddOrderItem and RemoveOrderItem which encapsulates the business logic for manipulating the order items.
 <hr/>
+
 ### Domain Event in DDD
 
 - Domain Events represent somthing that happened in the past and the other part of the same service bountry same domain need to react to those changes
@@ -177,5 +178,11 @@ ex.
 
 <b>How to use Domain events in DDD?</b>
 
+- Encapsulate the event details and dispatch them to the interested parties
+- Communicate changes within the domain to external handlers which may perform actions based on these events.
+
+  ![image](https://github.com/user-attachments/assets/0f041549-0826-46ac-9382-86b5d35c36a0)
+
+![image](https://github.com/user-attachments/assets/828e7c4f-1d85-4118-a616-7e7a96951620)
 
 
