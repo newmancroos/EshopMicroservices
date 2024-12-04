@@ -219,4 +219,16 @@ If a product price is updated in the Catalog Microservice, we should check the e
 ![image](https://github.com/user-attachments/assets/04e04f4b-08c3-4131-a2ec-1c96a2bee837)
 
 
+### Entity Framework
 
+Tooling for EF Core migration and reverse engineering (Scaffolding) from an existing datbase has 2 ways.
+
+1. .NET Core CLI:
+   	dotnet-ef and Microsoft.EntityFrameworkCore.Design for cross-platform command line tooling
+   	* dotnet tool install --global dotnet-ef
+   	* dotnet add package Microsoft.EntityFrameworkCore.Design
+2. Package Manager Console (PMC) in Visula Studio:
+   	* Microsoft.EntityFrameworkCore.Tools for Powershell tooling that works in the Visual Studio Package Manager Console
+   	   - install-Package Microsoft.EntotyFrameworkCore.Tools
+   	 
+   	
