@@ -37,6 +37,7 @@ public class Order:Aggregate<OrderId>
         };
 
         order.AddDomainEvent(new OrderCreatedEvent(order));
+        return order;
     }
 
     public void Update(OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment, OrderStatus statyus)
