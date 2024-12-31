@@ -13,7 +13,7 @@
         public IDomainEvent[] ClearDomainEvents()
         {
             IDomainEvent[] domainEvents = _domainEvents.ToArray();
-            domainEvents.Clone();
+            _domainEvents.Clear();
             return domainEvents;
         }
     }

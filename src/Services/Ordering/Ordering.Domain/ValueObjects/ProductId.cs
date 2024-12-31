@@ -11,8 +11,8 @@ public record ProductId
         ArgumentNullException.ThrowIfNull(value);
 
         if (value == Guid.Empty)
-        { 
-            throw new DomainException("Product cannot be empty.")
+        {
+            throw new DomainException("Product cannot be empty.");
         }
 
         return new ProductId(value);
