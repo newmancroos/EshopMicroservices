@@ -242,3 +242,7 @@ Example of Complex types (Value Objects):
 - Address can be a complex type representing the shiping and billing addresses for an Order. and Configuring Complex type in OnModelCreating :
   ![image](https://github.com/user-attachments/assets/99da130d-6a57-48d1-a2f9-1dc6b779d048)
   
+### EF Migration
+
+- We need to Add Microsoft.EntityFrameworkCore.Design
+- add-migration InitialCreate -OutputDir Data/Migrations -Project Ordering.Infrastructure -StartupProject Ordering.Api
