@@ -232,3 +232,13 @@ Tooling for EF Core migration and reverse engineering (Scaffolding) from an exis
    	   - install-Package Microsoft.EntotyFrameworkCore.Tools
    	 
    	
+### ValueObject Mapping with ComplexType and Complexproperty
+
+- EF Core 8, "Complex Types" are introduced to better support <b>value object</b> in DDD.
+- Complex Type is an object that does not have a primary key and is used to represent a set of properties in an entity.
+
+Example of Complex types (Value Objects):
+
+- Address can be a complex type representing the shiping and billing addresses for an Order. and Configuring Complex type in OnModelCreating :
+  ![image](https://github.com/user-attachments/assets/99da130d-6a57-48d1-a2f9-1dc6b779d048)
+  
