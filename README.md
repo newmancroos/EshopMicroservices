@@ -246,3 +246,10 @@ Example of Complex types (Value Objects):
 
 - We need to Add Microsoft.EntityFrameworkCore.Design
 - add-migration InitialCreate -OutputDir Data/Migrations -Project Ordering.Infrastructure -StartupProject Ordering.Api
+
+### What is Owns entity?
+
+An Entity may have set of same fields that can be used to other entities too for example Address entity can be used in mjultiple entities but it has no separate table. so The entity that has Address entity called entity owned the address entity.
+
+https://dev.to/kashifsoofi/entity-framework-core-owned-entity-clk
+
