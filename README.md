@@ -253,3 +253,25 @@ An Entity may have set of same fields that can be used to other entities too for
 
 https://dev.to/kashifsoofi/entity-framework-core-owned-entity-clk
 
+### CQRS and Event Sourcing
+
+Command Query Responsibility Segregation (CQRS) is a design pattern that segregates read and write operations for a data store into separate data models. This allows each model to be optimized independently and can improve performance, scalability, and security of an application.
+
+Event Sourcing is the pattern that hold every stage/state of the data stored into the database that means, when we edit a record it will not overwrite but maintain different copy of data and create materialized view for reading the data.
+
+![image](https://github.com/user-attachments/assets/81257503-2e47-467d-9162-08b46e97567f)
+
+### Eventual Consistency Principal
+- CQRS with Event sourcing pattern leads Eventual Consitence.
+- Eventual Consistency is especially used for systems that prefer high availability to strong consistency
+- The system will become consisyent after a certain time
+- we called this latency is Eventual Consitence principal and offers to be consistenct after a certiain time.
+- There are 2 types of Consistency level
+  	* Strict Consistency : When we save data, the data should be affect and seen immediatly for every client. ex. Deposits in bank immediatly available to the client
+  	* Eventual Consistency : When we write any data, it will take some time for the clients reading the data. ex. Video context, create video classes may take time to reach to the clients
+ 
+  ## CQRS and Event Sourcing Patterns:
+  	- When user perform any action into application, this will save actions as an event into Event store
+  	- Data will convert to Reading database with follwing the publish/subscribe patter with using message brokers.
+  	- Data will be denormalized into materialized view database for quering from the application
+  	- 
