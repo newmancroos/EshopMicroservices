@@ -275,3 +275,18 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
   	- Data will convert to Reading database with follwing the publish/subscribe patter with using message brokers.
   	- Data will be denormalized into materialized view database for quering from the application
   	- 
+
+
+### RabbitMQ
+
+- It is a message brocker using AMQP (Advance Message Queuing Protocal) to trasmitting the message
+- Main components of RabbitMq are:
+  	- Producer
+  	- Queue
+  	- Consumer
+  	- Message
+  	- Exchnage
+  	- Binding
+
+  ![image](https://github.com/user-attachments/assets/7651211b-c2f3-42c3-b508-8611ec04990a)
+  
