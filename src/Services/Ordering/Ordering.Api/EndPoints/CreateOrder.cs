@@ -3,7 +3,7 @@
 namespace Ordering.Api.EndPoints;
 
 
-public record CreateOrderRequest(OrderDto order);
+public record CreateOrderRequest(OrderDto Order);
 
 public record CreateOrderResponse(Guid Id);
 

@@ -22,7 +22,7 @@ public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandl
 
         var newOrder = Order.Create(
             id: OrderId.Of(Guid.NewGuid()),
-            customerId: CustomerId.Of(Guid.NewGuid()),
+            customerId: CustomerId.Of(order.CustomerId),
             orderName: OrderName.Of(order.OrderName),
             shippingAddress: shippingAddress,
             billingAddress: billingAddress,
