@@ -288,5 +288,6 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
   	- Exchnage
   	- Binding
 
-  ![image](https://github.com/user-attachments/assets/7651211b-c2f3-42c3-b508-8611ec04990a)
+  ![image](https://github.com/user-attachments/assets/9bebd600-119c-4c08-8b70-6ac77f3156aa)
+
   
