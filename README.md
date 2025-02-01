@@ -293,4 +293,9 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
 
   - Excchange is the structure that decide which queue to send messages.
   - Binding are link between the Exchange and the Queue
-  - Exchange has methods like Direct, Fan-out or Topic
+  - Exchange types
+    	- Direct Exchange   - Uses of single queue is being addresses, Routing key determine the queue
+    	- Topic Exchange  - Messages are sent to different queues according to their subject. Incoming messages classified and send to the related queues. It is varient of the Publish/Subscribe pattern
+    	- Fanout Exchange - Broadcasting system, Messages will be sent to all the queues related to the exchange
+    	- Header Exchange - Guided by the feature added to the header of the message. Routing key used in other models is not uses. Attributes of the header and queue should be match
+    
