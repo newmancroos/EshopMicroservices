@@ -290,4 +290,7 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
 
   ![image](https://github.com/user-attachments/assets/9bebd600-119c-4c08-8b70-6ac77f3156aa)
 
-  
+
+  - Excchange is the structure that decide which queue to send messages.
+  - Binding are link between the Exchange and the Queue
+  - Exchange has methods like Direct, Fan-out or Topic
