@@ -306,3 +306,9 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
 - We can solve this problem by imple,menting Outbox pattern.
 - In Outbox pattern, there will be two table for a transaction, 1. the actual table and apother one for Outbox tracking table. Instead of sending directly to the mesage bus we write the message into Outbox table under same transaction, if there is any problem both table will be rolled back.
   There should be a separate listerner service/background process read outbox table and send the message. 
+
+### Domain Event VS Integration Event
+
+- Domain event happens within a domain ie, Within a project example Order created event is hapenning within Order microservice. It may happen within a aggregate without out using message service may use MediatR Notification
+
+- Integration Event is across microservices example with Baskt checkout it will raise a integration event using RabbitMq and Order microservice will consume it and process the order
