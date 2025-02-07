@@ -309,6 +309,6 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
 
 ### Domain Event VS Integration Event
 
-- Domain event happens within a domain ie, Within a project example Order created event is hapenning within Order microservice. It may happen within a aggregate without out using message service may use MediatR Notification
+- Domain event happens within a domain ie, Within a project example Order created event is hapenning within Order microservice. It may happen within a aggregate without out using message service may use MediatR Notification (Im-memory message bus)
 
 - Integration Event is across microservices example with Baskt checkout it will raise a integration event using RabbitMq and Order microservice will consume it and process the order
