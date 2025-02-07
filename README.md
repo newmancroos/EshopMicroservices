@@ -302,3 +302,7 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
 
 ### Dual Write Problem
 - When application need to change data in two different system, (i.e: Change data in database and send message to message brocker) If one of the write failes, it can result in inconsustent data is called Dual write problem
+
+- We can solve this problem by imple,menting Outbox pattern.
+- In Outbox pattern, there will be two table for a transaction, 1. the actual table and apother one for Outbox tracking table. Instead of sending directly to the mesage bus we write the message into Outbox table under same transaction, if there is any problem both table will be rolled back.
+  There should be a separate listerner service/background process read outbox table and send the message. 
