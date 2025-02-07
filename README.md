@@ -299,3 +299,6 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
     	- Fanout Exchange - Broadcasting system, Messages will be sent to all the queues related to the exchange <br/>
     	- Header Exchange - Guided by the feature added to the header of the message. Routing key used in other models is not uses. Attributes of the header and queue should be match <br/>
     
+
+### Dual Write Problem
+- When application need to change data in two different system, (i.e: Change data in database and send message to message brocker) If one of the write failes, it can result in inconsustent data is called Dual write problem
