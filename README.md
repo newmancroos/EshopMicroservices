@@ -312,3 +312,9 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
 - Domain event happens within a domain ie, Within a project example Order created event is hapenning within Order microservice. It may happen within a aggregate without out using message service may use MediatR Notification (Im-memory message bus)
 
 - Integration Event is across microservices example with Baskt checkout it will raise a integration event using RabbitMq and Order microservice will consume it and process the order
+
+  ### Asp.Net Feature Management for Feature Flags
+  - Feature Falgs are powerful technique, allowing teams to modify system behavior without changing the code
+  - They enable functionalities to be turned on or off dynamically, providing flexibility in deployment and testing
+  - ASP.NET core supports feature management, integrating seamlessly with the existing configuration system.
+  - Microsoft.FeatureManagement.AspNetCore : A Nuget package that offers a streamlined approach to implement feature flags.
