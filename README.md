@@ -275,3 +275,46 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
   	- Data will convert to Reading database with follwing the publish/subscribe patter with using message brokers.
   	- Data will be denormalized into materialized view database for quering from the application
   	- 
+
+
+### RabbitMQ
+
+- It is a message brocker using AMQP (Advance Message Queuing Protocal) to trasmitting the message
+- Main components of RabbitMq are:
+  	- Producer
+  	- Queue
+  	- Consumer
+  	- Message
+  	- Exchnage
+  	- Binding
+
+  ![image](https://github.com/user-attachments/assets/9bebd600-119c-4c08-8b70-6ac77f3156aa)
+
+
+  - Excchange is the structure that decide which queue to send messages.
+  - Binding are link between the Exchange and the Queue
+  - Exchange types <br/>
+    	- Direct Exchange   - Uses of single queue is being addresses, Routing key determine the queue <br/>
+    	- Topic Exchange  - Messages are sent to different queues according to their subject. Incoming messages classified and send to the related queues. It is varient of the Publish/Subscribe pattern <br/>
+    	- Fanout Exchange - Broadcasting system, Messages will be sent to all the queues related to the exchange <br/>
+    	- Header Exchange - Guided by the feature added to the header of the message. Routing key used in other models is not uses. Attributes of the header and queue should be match <br/>
+    
+
+### Dual Write Problem
+- When application need to change data in two different system, (i.e: Change data in database and send message to message brocker) If one of the write failes, it can result in inconsustent data is called Dual write problem
+
+- We can solve this problem by imple,menting Outbox pattern.
+- In Outbox pattern, there will be two table for a transaction, 1. the actual table and apother one for Outbox tracking table. Instead of sending directly to the mesage bus we write the message into Outbox table under same transaction, if there is any problem both table will be rolled back.
+  There should be a separate listerner service/background process read outbox table and send the message. 
+
+### Domain Event VS Integration Event
+
+- Domain event happens within a domain ie, Within a project example Order created event is hapenning within Order microservice. It may happen within a aggregate without out using message service may use MediatR Notification (Im-memory message bus)
+
+- Integration Event is across microservices example with Baskt checkout it will raise a integration event using RabbitMq and Order microservice will consume it and process the order
+
+  ### Asp.Net Feature Management for Feature Flags
+  - Feature Falgs are powerful technique, allowing teams to modify system behavior without changing the code
+  - They enable functionalities to be turned on or off dynamically, providing flexibility in deployment and testing
+  - ASP.NET core supports feature management, integrating seamlessly with the existing configuration system.
+  - Microsoft.FeatureManagement.AspNetCore : A Nuget package that offers a streamlined approach to implement feature flags.
