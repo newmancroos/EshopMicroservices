@@ -4,6 +4,7 @@ using HealthChecks.UI.Client;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Discount.Grpc;
+using BuildingBlock.Messaging.MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,6 +64,9 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 //We get certificate error when calling grpc from basket to bypass that error we added ConfigurePrimaryHttpMessageHandler.
 //This should not be used in production, we need to configure correct certificate
 //---------------------------------------------------
+
+//Async Communication Service
+builder.Services.AddMessageBorker(builder.Configuration);
 
 //Cross-Cutting service
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
