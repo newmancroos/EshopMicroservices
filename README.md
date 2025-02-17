@@ -318,3 +318,19 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
   - They enable functionalities to be turned on or off dynamically, providing flexibility in deployment and testing
   - ASP.NET core supports feature management, integrating seamlessly with the existing configuration system.
   - Microsoft.FeatureManagement.AspNetCore : A Nuget package that offers a streamlined approach to implement feature flags.
+
+
+### Proxy Vs Reverse Proxy
+A proxy server acts as an intermediatry between a user and the internet, while a Reverse proxy sits in front of web servers to inspect incoming request.
+## <u>Proxy Server</u>
+- Acts as a gateway between users and internet
+- Protect users from malicius activity on the internet
+- Can route and filter employee tracffic to the public internet
+- Can provide varying level of functionality, Secure and privacy
+
+## <u>Reverse Proxy</u>
+- Intercept and inspect incoming client requests before forwarding wethem to the web server
+- Can handle multiple requests for the same site, distributing them to different servers
+- Can cache web content to improve loading time
+- Can support load balancing, traffic filtering, IP address concealment and DDos attck protection
+
