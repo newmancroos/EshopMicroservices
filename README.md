@@ -346,3 +346,8 @@ A proxy server acts as an intermediatry between a user and the internet, while a
 - API Gateway is a single point of entry to the client applications, sits between the client and multiple backend.
 - API Gateway manage route to internal microservices and able to aggreate several microservices request in 1 response and handle cross-cutting concerns.
 - Provides a reverse proxy to redirect or route requests to your internal microservices endpoints.
+- Serveral client applications connect to a single API gateway possible Single-Point-of-failure risk.
+- If these client applications increase or adding more logic to business complexity in API Gateway, it would be anti-pattern.
+
+![image](https://github.com/user-attachments/assets/2c6f00d2-0321-4a69-b277-b348632a6bd0)
+
