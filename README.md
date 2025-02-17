@@ -339,3 +339,10 @@ A proxy server acts as an intermediatry between a user and the internet, while a
 - Useful when expose multiple services on a single endpoint and route then to internal backend microservices based on the request
 - The client needs to consume several microservices, gateway route pattern offers to create a new endpoint that handle the request and route this request for each services
 - If one of microservices are changed, the client doesn;t know anything and not need to change any code on client side, the only changes will be configuration route changes.
+
+![image](https://github.com/user-attachments/assets/8ed8399b-0468-445d-868a-1719b5f2f98d)
+
+### API Gateway Pattern
+- API Gateway is a single point of entry to the client applications, sits between the client and multiple backend.
+- API Gateway manage route to internal microservices and able to aggreate several microservices request in 1 response and handle cross-cutting concerns.
+- Provides a reverse proxy to redirect or route requests to your internal microservices endpoints.
