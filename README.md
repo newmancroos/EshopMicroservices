@@ -351,3 +351,17 @@ A proxy server acts as an intermediatry between a user and the internet, while a
 
 ![image](https://github.com/user-attachments/assets/2c6f00d2-0321-4a69-b277-b348632a6bd0)
 
+
+### Main feature of API gateway Pattern
+- Reverse Proxy and gateway Routing
+- Request Aggregation and Gateway Aggrigation (Aggregate multiple internal microservices into single client request / Aggregate multiple result from mulriple apis into one response and send back to client.
+- Cross-cutting Concern (Authentication, Authorization, Service discovery, response caching, Retry policies, Load Balancing, Logging and tracing
+
+### Backends for Frontends pattern (BFF)
+- For complex application, having single Gateway nakes a Single-point-of failure
+- So we can have multiple Gateway so Client applications can communicate different gateways.
+
+![image](https://github.com/user-attachments/assets/cc222309-5266-4b44-ac94-a17e36529b91)
+
+
+- 
