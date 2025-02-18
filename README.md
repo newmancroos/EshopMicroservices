@@ -385,4 +385,5 @@ A proxy server acts as an intermediatry between a user and the internet, while a
   https://www.youtube.com/watch?v=P8y8NAroVKk&t=845s
 
   
+![image](https://github.com/user-attachments/assets/5a81015b-ebd4-45c1-a942-dc9d17140414)
 
