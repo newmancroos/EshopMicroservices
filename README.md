@@ -377,4 +377,12 @@ A proxy server acts as an intermediatry between a user and the internet, while a
  	- <b>Cross-Platform</b> : YARP is build for .NET, making it cross-platform. It can run on any platform that support .NEt Core, including Windows, Linux and macOS
   	- <b>Support for Latest Protocols</b> : YARP supports mordern networking protocols incliding gRPC, HTTP/2 and WebSockets
   	- <b>Great perofrmance</b>
-  	- <b> Health Checks <b/> : Movitors the health of backend services and reroiutes traffic as needed.  
+  	- <b> Health Checks <b/> : Movitors the health of backend services and reroiutes traffic as needed.
+ 
+  ![image](https://github.com/user-attachments/assets/0b1f8841-f1db-448d-ab77-9aefbec86afa)
+
+
+  https://www.youtube.com/watch?v=P8y8NAroVKk&t=845s
+
+  
+
