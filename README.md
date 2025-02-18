@@ -367,4 +367,14 @@ A proxy server acts as an intermediatry between a user and the internet, while a
 ![image](https://github.com/user-attachments/assets/cc222309-5266-4b44-ac94-a17e36529b91)
 
 
-- 
+### Microsoft Reverse Proxy : YARP
+
+- YARP is a lightweight higly customizable reverse proxy solution developcrosoft, tailorded for .NET application
+- Designed to integrate seamlessly with .NET Core, making it easy to add to existing .Net project
+- Simplyfy the routing of requests to different backend services, offering capabilities for request transformation, load balacing and more.
+- Features
+	- <b>Customozable routing rules</b>
+ 	- <b>Cross-Platform</b> : YARP is build for .NET, making it cross-platform. It can run on any platform that support .NEt Core, including Windows, Linux and macOS
+  	- <b>Support for Latest Protocols</b> : YARP supports mordern networking protocols incliding gRPC, HTTP/2 and WebSockets
+  	- <b>Great perofrmance</b>
+  	- <b> Health Checks <b/> : Movitors the health of backend services and reroiutes traffic as needed.  
