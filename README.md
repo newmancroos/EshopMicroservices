@@ -334,6 +334,9 @@ A proxy server acts as an intermediatry between a user and the internet, while a
 - Can cache web content to improve loading time
 - Can support load balancing, traffic filtering, IP address concealment and DDos attck protection
 
+  ![image](https://github.com/user-attachments/assets/1b394540-abe2-47e3-a244-ba65fb0120f1)
+
+
 ### Gateway routing Pattern
 - Route requests to multiple microservices with exposing a single endpoint
 - Useful when expose multiple services on a single endpoint and route then to internal backend microservices based on the request
