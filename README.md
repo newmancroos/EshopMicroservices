@@ -387,3 +387,6 @@ A proxy server acts as an intermediatry between a user and the internet, while a
   
 ![image](https://github.com/user-attachments/assets/5a81015b-ebd4-45c1-a942-dc9d17140414)
 
+### Yarp RateLimiter
+
+"reverse proxy rate limits" refers to the ability to configure a YARP instance to restrict the number of requests a client can make within a specific timeframe, acting as a protective layer by filtering excessive traffic before it reaches the backend servers, thus preventing potential overload and mitigating attacks like DDoS or brute-force attempts; essentially, it's a feature that allows you to control the rate of incoming requests at the reverse proxy level before forwarding them to the actual backend service. 
