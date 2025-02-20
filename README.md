@@ -318,3 +318,75 @@ Event Sourcing is the pattern that hold every stage/state of the data stored int
   - They enable functionalities to be turned on or off dynamically, providing flexibility in deployment and testing
   - ASP.NET core supports feature management, integrating seamlessly with the existing configuration system.
   - Microsoft.FeatureManagement.AspNetCore : A Nuget package that offers a streamlined approach to implement feature flags.
+
+
+### Proxy Vs Reverse Proxy
+A proxy server acts as an intermediatry between a user and the internet, while a Reverse proxy sits in front of web servers to inspect incoming request.
+## <u>Proxy Server</u>
+- Acts as a gateway between users and internet
+- Protect users from malicius activity on the internet
+- Can route and filter employee tracffic to the public internet
+- Can provide varying level of functionality, Secure and privacy
+
+## <u>Reverse Proxy</u>
+- Intercept and inspect incoming client requests before forwarding wethem to the web server
+- Can handle multiple requests for the same site, distributing them to different servers
+- Can cache web content to improve loading time
+- Can support load balancing, traffic filtering, IP address concealment and DDos attck protection
+
+  ![image](https://github.com/user-attachments/assets/1b394540-abe2-47e3-a244-ba65fb0120f1)
+
+
+### Gateway routing Pattern
+- Route requests to multiple microservices with exposing a single endpoint
+- Useful when expose multiple services on a single endpoint and route then to internal backend microservices based on the request
+- The client needs to consume several microservices, gateway route pattern offers to create a new endpoint that handle the request and route this request for each services
+- If one of microservices are changed, the client doesn;t know anything and not need to change any code on client side, the only changes will be configuration route changes.
+
+![image](https://github.com/user-attachments/assets/8ed8399b-0468-445d-868a-1719b5f2f98d)
+
+### API Gateway Pattern
+- API Gateway is a single point of entry to the client applications, sits between the client and multiple backend.
+- API Gateway manage route to internal microservices and able to aggreate several microservices request in 1 response and handle cross-cutting concerns.
+- Provides a reverse proxy to redirect or route requests to your internal microservices endpoints.
+- Serveral client applications connect to a single API gateway possible Single-Point-of-failure risk.
+- If these client applications increase or adding more logic to business complexity in API Gateway, it would be anti-pattern.
+
+![image](https://github.com/user-attachments/assets/2c6f00d2-0321-4a69-b277-b348632a6bd0)
+
+
+### Main feature of API gateway Pattern
+- Reverse Proxy and gateway Routing
+- Request Aggregation and Gateway Aggrigation (Aggregate multiple internal microservices into single client request / Aggregate multiple result from mulriple apis into one response and send back to client.
+- Cross-cutting Concern (Authentication, Authorization, Service discovery, response caching, Retry policies, Load Balancing, Logging and tracing
+
+### Backends for Frontends pattern (BFF)
+- For complex application, having single Gateway nakes a Single-point-of failure
+- So we can have multiple Gateway so Client applications can communicate different gateways.
+
+![image](https://github.com/user-attachments/assets/cc222309-5266-4b44-ac94-a17e36529b91)
+
+
+### Microsoft Reverse Proxy : YARP
+
+- YARP is a lightweight higly customizable reverse proxy solution developed by Microsoft, tailorded for .NET application
+- Designed to integrate seamlessly with .NET Core, making it easy to add to existing .Net project
+- Simplyfy the routing of requests to different backend services, offering capabilities for request transformation, load balacing and more.
+- Features
+	- <b>Customozable routing rules</b>
+ 	- <b>Cross-Platform</b> : YARP is build for .NET, making it cross-platform. It can run on any platform that support .NEt Core, including Windows, Linux and macOS
+  	- <b>Support for Latest Protocols</b> : YARP supports mordern networking protocols incliding gRPC, HTTP/2 and WebSockets
+  	- <b>Great perofrmance</b>
+  	- <b> Health Checks <b/> : Movitors the health of backend services and reroiutes traffic as needed.
+ 
+  ![image](https://github.com/user-attachments/assets/0b1f8841-f1db-448d-ab77-9aefbec86afa)
+
+
+  https://www.youtube.com/watch?v=P8y8NAroVKk&t=845s
+
+  
+![image](https://github.com/user-attachments/assets/5a81015b-ebd4-45c1-a942-dc9d17140414)
+
+### Yarp RateLimiter
+
+"reverse proxy rate limits" refers to the ability to configure a YARP instance to restrict the number of requests a client can make within a specific timeframe, acting as a protective layer by filtering excessive traffic before it reaches the backend servers, thus preventing potential overload and mitigating attacks like DDoS or brute-force attempts; essentially, it's a feature that allows you to control the rate of incoming requests at the reverse proxy level before forwarding them to the actual backend service. 
