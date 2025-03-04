@@ -390,3 +390,22 @@ A proxy server acts as an intermediatry between a user and the internet, while a
 ### Yarp RateLimiter
 
 "reverse proxy rate limits" refers to the ability to configure a YARP instance to restrict the number of requests a client can make within a specific timeframe, acting as a protective layer by filtering excessive traffic before it reaches the backend servers, thus preventing potential overload and mitigating attacks like DDoS or brute-force attempts; essentially, it's a feature that allows you to control the rate of incoming requests at the reverse proxy level before forwarding them to the actual backend service. 
+
+
+### Refit HttpClientFactory
+
+https://learn.microsoft.com/en-us/dotnet/core/extensions/httpclient-factory#generated-clients
+
+<p>
+	IHttpClientFactory can be used in combination with third-party libraries such as Refit. Refit is a REST library for .NET. It allows for declarative REST API definitions, mapping interface methods to endpoints. An implementation of the interface is generated dynamically by the RestService, using HttpClient to make the external HTTP calls.
+</p>
+In Refit, Interface request parameter name should be same as calling microservice request name. for example 
+<pre>
+	[Post("/basket-service/basket")]
+	Task<CheckoutBasketRequest> CheckoutBasket(CheckoutBasketRequest request);
+</pre>
+here the request paramter name "request" should be same as
+
+![image](https://github.com/user-attachments/assets/60bbff03-b495-4c88-a36c-c0f1e878fde4)
+
+In the basket microservice end-point. 
