@@ -14,5 +14,6 @@ public class LeaveTypeProfile:Profile
         CreateMap<Domain.LeaveType, CreateLeaveTypeCommand>().ReverseMap();
         CreateMap<Domain.LeaveType, UpdateLeaveTypeCommand>().ReverseMap();
 
+
     }
 }

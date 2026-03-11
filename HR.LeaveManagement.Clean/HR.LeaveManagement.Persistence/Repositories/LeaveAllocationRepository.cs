@@ -23,21 +23,21 @@ public class LeaveAllocationRepository : GenericRepository<LeaveAllocation>, ILe
                                         && q.LeaveTypeId == leaveTypeId && q.Period==period);
     }
 
-    public async Task<LeaveAllocation> GetLeaveAllocationWithDetails(int id)
+    public async Task<LeaveAllocation> GetLeaveAllocationsWithDetails(int id)
     {
         return await _hrDatabaseContext.LeaveAllocations.Where(q => q.Id == id)
                             .Include(q => q.LeaveType)
                             .FirstOrDefaultAsync();
     }
 
-    public async Task<List<LeaveAllocation>> GetLeaveAllocationWithDetails()
+    public async Task<List<LeaveAllocation>> GetLeaveAllocationsWithDetails()
     {
         return await _hrDatabaseContext.LeaveAllocations
                     .Include(q => q.LeaveType)
                     .ToListAsync();
     }
 
-    public async Task<List<LeaveAllocation>> GetLeaveAllocationWithDetails(string userId)
+    public async Task<List<LeaveAllocation>> GetLeaveAllocationsWithDetails(string userId)
     {
         return await _hrDatabaseContext.LeaveAllocations.Where(q => q.EmployeeId == userId)
              .Include(q => q.LeaveType)
